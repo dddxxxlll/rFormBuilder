@@ -1,0 +1,103 @@
+.formBuilder {
+    width: 900px;
+    height: 100%;
+    .contentBox {
+        width: 100%;
+        height: auto;
+        padding: 40px 0;
+        box-sizing: border-box;
+    }
+    .questionBox {
+        width: 100%;
+        padding: 18px 30px;
+        background-color: #FFF;
+        box-sizing: border-box;
+        display: flex;
+        margin: 12px 0;
+        .order {
+            width: 40px;
+            height: 100%;
+            float: left;
+            flex-shrink: 0;
+            line-height: 36px;
+            color: #484848;
+            font-size: 18px;
+        }
+        .wrapper {
+            flex-grow: 1;
+            color: #484848;
+            text-align: left;
+            dt {
+                line-height: 36px;
+                font-size: 16px;
+                text-align: left;
+                margin-bottom: 5px;
+                .iconBox {
+                    float: right;
+                    box-sizing: border-box;
+                    width: 100px;
+                    height: 36px;
+                    text-align: right;
+                    .icon {
+                        cursor: pointer;
+                        display: inline;
+                    }
+                }
+            }
+            dd {
+                text-align: left;
+                line-height: 36px;
+                font-size: 14px;
+                margin: 5px 0;
+                box-sizing: border-box;
+                padding: 5px;
+                border: 1px solid #FFF;
+                &.selected {
+                    border: 1px dashed #000;
+                }
+                .del {
+                    float: right;
+                }
+                &.column {
+                    display: inline-block;
+                    width: 100%;
+                }
+                &.column_2 {
+                    width: 50%;
+                }
+                &.column_3 {
+                    width: 33.33%;
+                }
+                &.column_4 {
+                    width: 25%;
+                }
+            }
+            .selectBox {
+                width: 60px;
+                float: left;
+            }
+        }
+        .editBox {
+            margin-top: 24px;
+            .btn {
+                float: right;
+                margin-left: 10px;
+            }
+        }
+        &.selected {
+            box-shadow: 0 10px 15px 0 rgba(0,0,0,.1);
+            border: 2px solid #2672ff;
+            border-radius: 4px;
+            margin: 24px 0;
+        }
+        &.Fselect {
+            .wrapper {
+                dd {
+                    .input {
+                        width: 100px;
+                    }
+                }
+            }
+        }
+    }
+}
