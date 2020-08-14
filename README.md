@@ -14,12 +14,12 @@ npm i -S rformbuilder-dddxxxlll
 ## For Vue.js 2.0
 ### import in main.js
 ```
-import formbuilder from 'rformbuilder-dddxxxlll'
+import FormBuilder from 'rformbuilder-dddxxxlll'
 ```
 
 ### Use rformbuilder component:
 ```
-<formbuilder @updateFormData="updateFormData" @switchQuestion="switchQuestion" @addOption="addOption" @delOption="delOption" @delQuestion="delQuestion" @selectQuestion="selectQuestion" :editMode="editMode" :formData="formData" class="formBuilder"></formbuilder>
+<FormBuilder updateFormDataF={updateFormDataF} addOptionF={addOptionF} delOptionF={delOptionF} editMode={editMode} formData={formData} switchQuestionF={switchQuestionF} delQuestionF={delQuestionF} selectQuestionF={selectQuestionF} className="formBuilder"></FormBuilder>
 ```
 
 ### JSON schema
