@@ -3,6 +3,7 @@ import { Button, Modal, message, Form, Input, Switch, Radio, Select } from 'antd
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 
 import FormBuilder from './components/formBuilder/index'
+//import FormBuilder from 'rformbuilder-dddxxxlll'
 
 import './App.scss'
 
@@ -922,7 +923,7 @@ function App() {
             }
           </div>
           <div className="save" onClick={saveData}>
-            保存
+            保存并预览
           </div>
         </div>
       }

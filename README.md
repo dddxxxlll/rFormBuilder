@@ -1,4 +1,4 @@
-# rFormBuilder
+# rFormBuilder-dddxxxlll
 
 ## 简介
 一个基于React Hook的表单生成器
@@ -6,69 +6,238 @@
 ## 在线演示地址
 <a href="https://dddxxxlll.github.io/rFormBuilder/">https://dddxxxlll.github.io/rFormBuilder/</a>
 
-## Available Scripts
+## Installation
+```
+npm i -S rformbuilder-dddxxxlll
+```
 
-In the project directory, you can run:
+## For Vue.js 2.0
+### import in main.js
+```
+import formbuilder from 'rformbuilder-dddxxxlll'
+```
 
-### `npm start`
+### Use rformbuilder component:
+```
+<formbuilder @updateFormData="updateFormData" @switchQuestion="switchQuestion" @addOption="addOption" @delOption="delOption" @delQuestion="delQuestion" @selectQuestion="selectQuestion" :editMode="editMode" :formData="formData" class="formBuilder"></formbuilder>
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### JSON schema
+```
+[
+    {
+        queType: "Radio",
+        question: "这是一个单选题",
+        queOnly: 0,
+        queSeq: 0,
+        value: 0,
+        inputValue: "",//填空的值
+        des: "",// 描述
+        queLimit: {
+            required: false,//必选
+            score: 0,// 分值
+            weight: 0,// 权重
+            arrange:1,// 选项排列
+        },
+        isShow: {
+            queOnly: "",
+            value: "",
+            check: "",
+        }, // 必要题目序号数组
+        options: [
+            {
+                des: "选项1",
+                hasInput: false,
+                value: 1
+            },
+            {
+                des: "选项2",
+                hasInput: true,
+                value: 2
+            }
+        ]
+    },
+    {
+        queType: "Checkbox",
+        question: "这是一个多选题",
+        queOnly: 1,
+        queSeq: 1,
+        value: [],
+        inputValue: [],
+        des: "",
+        queLimit: {
+            required: false,//必选
+            score: 0,// 分值
+            weight: 0,// 权重
+            arrange:1,// 选项排列
+            minWr: "",
+            maxWr: ""
+        },
+        isShow: {
+            queOnly: "",
+            value: "",
+            check: "",
+        }, // 必要题目序号数组
+        options: [
+            {
+                des: "选项1",
+                hasInput: false,
+                value: 1
+            },
+            {
+                des: "选项2",
+                hasInput: true,
+                value: 2
+            }
+        ]
+    },
+    {
+        queType: "Select",
+        question: "这是一个下拉选择",
+        queOnly: 2,
+        queSeq: 2,
+        value: "",
+        des: "",// 描述
+        queLimit: {
+            required: false,//必选
+            score: 0,// 分值
+            weight: 0,// 权重
+            arrange:1,// 选项排列
+        },
+        isShow: {
+            queOnly: "",
+            value: "",
+            check: "",
+        }, // 必要题目序号数组
+        options: [
+            {
+                des: "选项1",
+                value: 1
+            },
+            {
+                des: "选项2",
+                value: 2
+            }
+        ]
+    },
+    {
+        queType: "DatePicker",
+        question: "这是一个日期选择",
+        queOnly: 3,
+        queSeq: 3,
+        value: 0,
+        des: "",// 描述
+        queLimit: {
+            required: false,//必选
+            score: 0,// 分值
+            weight: 0,// 权重
+        },
+        isShow: {
+            queOnly: 1,
+            value: 1,
+            check: false,
+        }, // 必要题目序号数组
+    },
+    {
+        queType: "RadioTable",
+        question: "这是一个矩阵选择",
+        queOnly: 4,
+        queSeq: 4,
+        des: "",// 描述
+        queLimit: {
+            required: false,//必选
+            score: 0,// 分值
+            weight: 0,// 权重
+            selectType: "Radio",
+            minWr: "",
+            maxWr: ""
+        },
+        isShow: {
+            queOnly: "",
+            value: "",
+            check: "",
+        }, // 必要题目序号数组
+        // value: 0,
+        options: {
+            column: [{name:"选项1",value:1},{name:"选项2",value:2}],
+            row: [{name:"行1",value:[]},{name:"行2",value:[]}],
+        }
+    },
+    {
+        queType: "Input",
+        question: "这是一个填空题",
+        queOnly: 5,
+        queSeq: 5,
+        value: "",
+        des: "",
+        queLimit: {
+            required: false,//必选
+            score: 0,// 分值
+            weight: 0,// 权重
+            fillType: "Number",
+            minWr: 0,
+            maxWr: 10
+        },
+        isShow: {
+            queOnly: "",
+            value: "",
+            check: "",
+        }, // 必要题目序号数组
+    },
+    {
+        queType: "MultiInput",
+        question: "这是一个多项选择题",
+        queOnly: 6,
+        queSeq: 6,
+        value: "",
+        des: "",
+        queLimit: {
+            required: false,//必选
+            score: 0,// 分值
+            weight: 0,// 权重
+        },
+        isShow: {
+            queOnly: "",
+            value: "",
+            check: "",
+        }, // 必要题目序号数组
+        options: [
+            {
+                des: "填空1",
+                value: "",
+                fillType: "Number", // 输入框type：Number,ZH,EN,None
+                minWr: "",
+                maxWr: ""
+            },
+            {
+                des: "填空2",
+                value: "",
+                fillType: "None", // 输入框type：Number,ZH,EN,None
+                minWr: "",
+                maxWr: ""
+            }
+        ]
+    },
+    {
+        queType: "InputTable",
+        question: "这是一个矩阵填空",
+        queOnly: 7,
+        queSeq: 7,
+        des: "",// 描述
+        queLimit: {
+            required: false,//必选
+            score: 0,// 分值
+            weight: 0,// 权重
+        },
+        isShow: {
+            queOnly: "",
+            value: "",
+            check: true,
+        }, // 必要题目序号数组
+        options: {
+            column: [{name:"选项1",value:1},{name:"选项2",value:2}],
+            row: [{name:"行1",value:[]},{name:"行2",value:[]}],//值为数组，有多少列就有多少个值
+        }
+    }
+]
+```

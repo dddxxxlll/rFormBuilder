@@ -3,10 +3,11 @@ import { Radio, Checkbox, Input, Button, DatePicker, Table, Select } from 'antd'
 import {DeleteOutlined, DownOutlined, CaretUpOutlined, CaretDownOutlined} from '@ant-design/icons';
 import './formBuilder.scss'
 
-const { Column } = Table;
-const { Option } = Select;
+
 
 function FormBuilder(props) {
+    const { Column } = Table;
+    const { Option } = Select;
     const [questionSelect,setQuestionSelect] = useState(null);
     const [optionSelection,setOptionSelection] = useState(new Array(2));
 

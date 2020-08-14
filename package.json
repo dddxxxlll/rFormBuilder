@@ -1,7 +1,15 @@
 {
-  "name": "react_version",
-  "version": "0.1.0",
-  "private": true,
+  "name": "rformbuilder-dddxxxlll",
+  "version": "0.1.2",
+  "private": false,
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dddxxxlll/rFormBuilder.git"
+  },
+  "keywords": ["react", "formbuilder"],
+  "author": "dddxxxlll",
   "dependencies": {
     "@ant-design/icons": "^4.2.1",
     "@babel/core": "7.9.0",
@@ -70,7 +78,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "lib": "npx babel src/components/formBuilder --out-dir lib"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -91,6 +100,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
     "styled-jsx-plugin-sass": "^1.0.0"
   },
   "jest": {
@@ -142,9 +154,7 @@
     ]
   },
   "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "presets": ["@babel/preset-env", "@babel/preset-react"]
   },
   "homepage": "."
 }
