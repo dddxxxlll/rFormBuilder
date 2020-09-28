@@ -11,7 +11,7 @@
 npm i -S rformbuilder-dddxxxlll
 ```
 
-## For Vue.js 2.0
+## For React
 ### import in main.js
 ```
 import FormBuilder from 'rformbuilder-dddxxxlll'
